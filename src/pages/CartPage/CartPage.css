@@ -1,0 +1,13 @@
+.cart-page__title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1c1c27;
+  margin: 12px 0 26px;
+}
+
+@media (max-width: 600px) {
+  .cart-page__title {
+    font-size: 24px;
+    margin: 8px 0 18px;
+  }
+}

@@ -30,7 +30,6 @@ export const products: Product[] = [
     id: 4,
     title: "Apple BYZ S852I",
     price: 2927,
-    oldPrice: 3527,
     rating: 4.7,
     image: "/images/applebyz.png",
     category: "wired",

@@ -1,4 +1,5 @@
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import ProductList from '../../components/ProductList/ProductList';
 import { products } from '../../data/products';
 import './HomePage.css';
@@ -18,6 +19,8 @@ export default function HomePage() {
                 <h2 className="category-title">Беспроводные наушники</h2>
                 <ProductList products={wireless} />
             </main>
+
+            <Footer />
         </div>
     );
 }

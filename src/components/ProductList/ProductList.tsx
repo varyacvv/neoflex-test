@@ -4,13 +4,18 @@ import './ProductList.css';
 
 interface ProductListProps {
     products: Product[];
+    onOpenProduct?: (product: Product) => void;
 }
 
-export default function ProductList({ products }: ProductListProps) {
+export default function ProductList({ products, onOpenProduct }: ProductListProps) {
     return (
         <div className="product-list">
             {products.map(product => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard
+                    key={product.id}
+                    product={product}
+                    onOpen={onOpenProduct}
+                />
             ))}
         </div>
     );

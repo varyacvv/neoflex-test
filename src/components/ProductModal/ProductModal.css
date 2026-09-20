@@ -1,0 +1,144 @@
+.product-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.product-modal__close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  border: none;
+  color: #1c1c27;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+  z-index: 1;
+}
+.product-modal__close:hover {
+  background: #ffa542;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.product-modal__image {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.product-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-modal__title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1c1c27;
+}
+
+.product-modal__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #838383;
+}
+.product-modal__rating .icon {
+  color: #ffce7f;
+}
+
+.product-modal__description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.product-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.product-modal__prices {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-modal__price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffa542;
+}
+
+.product-modal__old-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffce7f;
+  text-decoration: line-through;
+}
+
+.product-modal__buy {
+  background: #101010;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+.product-modal__buy:hover {
+  background: #ffa542;
+  box-shadow: 0 6px 20px rgba(255, 165, 66, 0.35);
+}
+.product-modal__buy:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 600px) {
+  .product-modal {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .product-modal__image {
+    height: 200px;
+  }
+  .product-modal__title {
+    font-size: 18px;
+  }
+  .product-modal__price {
+    font-size: 18px;
+  }
+  .product-modal__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .product-modal__buy {
+    width: 100%;
+  }
+}

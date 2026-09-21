@@ -1,5 +1,6 @@
 import type { Product } from '../../types/product';
 import { useCart } from '../../context/useCart';
+import { useTranslation } from '../../i18n/useTranslation';
 import { StarIcon } from '../Icons/Icons';
 import { formatPrice } from '../../utils/format';
 import './ProductCard.css';
@@ -11,6 +12,8 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onOpen }: ProductCardProps) {
     const { addToCart } = useCart();
+    const { t } = useTranslation();
+    const p = t('product');
 
     return (
         <article className="product-card">
@@ -18,7 +21,7 @@ export default function ProductCard({ product, onOpen }: ProductCardProps) {
                 type="button"
                 className="product-card__image-btn"
                 onClick={() => onOpen?.(product)}
-                aria-label={`Подробнее о ${product.title}`}
+                aria-label={`${p.details} ${product.title}`}
             >
                 <img
                     className="product-card__image"
@@ -54,7 +57,7 @@ export default function ProductCard({ product, onOpen }: ProductCardProps) {
                     className="product-card__buy"
                     onClick={() => addToCart(product)}
                 >
-                    Купить
+                    {p.buy}
                 </button>
             </div>
         </article>

@@ -1,5 +1,6 @@
 import type { CartItemType } from '../../types/product';
 import { useCart } from '../../context/useCart';
+import { useTranslation } from '../../i18n/useTranslation';
 import { TrashIcon } from '../Icons/Icons';
 import { formatPrice } from '../../utils/format';
 import './CartItem.css';
@@ -10,6 +11,8 @@ interface CartItemProps {
 
 export default function CartItem({ item }: CartItemProps) {
     const { increment, decrement, removeFromCart } = useCart();
+    const { t } = useTranslation();
+    const c = t('cart');
     const { product, quantity } = item;
 
     return (
@@ -30,7 +33,7 @@ export default function CartItem({ item }: CartItemProps) {
                 type="button"
                 className="cart-item__remove"
                 onClick={() => removeFromCart(product.id)}
-                aria-label="Удалить товар"
+                aria-label={c.remove}
             >
                 <TrashIcon />
             </button>
@@ -41,7 +44,7 @@ export default function CartItem({ item }: CartItemProps) {
                         type="button"
                         className="cart-item__qty-btn"
                         onClick={() => decrement(product.id)}
-                        aria-label="Уменьшить количество"
+                        aria-label={c.decrease}
                     >
                         −
                     </button>
@@ -50,7 +53,7 @@ export default function CartItem({ item }: CartItemProps) {
                         type="button"
                         className="cart-item__qty-btn"
                         onClick={() => increment(product.id)}
-                        aria-label="Увеличить количество"
+                        aria-label={c.increase}
                     >
                         +
                     </button>

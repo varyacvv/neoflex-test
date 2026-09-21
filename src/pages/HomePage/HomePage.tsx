@@ -4,11 +4,14 @@ import Footer from '../../components/Footer/Footer';
 import ProductList from '../../components/ProductList/ProductList';
 import ProductModal from '../../components/ProductModal/ProductModal';
 import { products } from '../../data/products';
+import { useTranslation } from '../../i18n/useTranslation';
 import type { Product } from '../../types/product';
 import './HomePage.css';
 
 export default function HomePage() {
     const [activeProduct, setActiveProduct] = useState<Product | null>(null);
+    const { t } = useTranslation();
+    const home = t('home');
 
     const wired = products.filter(p => p.category === 'wired');
     const wireless = products.filter(p => p.category === 'wireless');
@@ -18,10 +21,10 @@ export default function HomePage() {
             <Header />
 
             <main>
-                <h2 className="category-title">Наушники</h2>
+                <h2 className="category-title">{home.headphones}</h2>
                 <ProductList products={wired} onOpenProduct={setActiveProduct} />
 
-                <h2 className="category-title">Беспроводные наушники</h2>
+                <h2 className="category-title">{home.wirelessHeadphones}</h2>
                 <ProductList products={wireless} onOpenProduct={setActiveProduct} />
             </main>
 

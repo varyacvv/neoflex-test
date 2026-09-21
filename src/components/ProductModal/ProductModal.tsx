@@ -1,6 +1,7 @@
 import type { Product } from '../../types/product';
 import Modal from '../Modal/Modal';
 import { useCart } from '../../context/useCart';
+import { useTranslation } from '../../i18n/useTranslation';
 import { StarIcon } from '../Icons/Icons';
 import { formatPrice } from '../../utils/format';
 import './ProductModal.css';
@@ -12,6 +13,9 @@ interface ProductModalProps {
 
 export default function ProductModal({ product, onClose }: ProductModalProps) {
     const { addToCart } = useCart();
+    const { t } = useTranslation();
+    const m = t('modal');
+    const p = t('product');
 
     return (
         <Modal isOpen={product !== null} onClose={onClose}>
@@ -21,7 +25,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                         type="button"
                         className="product-modal__close"
                         onClick={onClose}
-                        aria-label="Закрыть"
+                        aria-label={m.close}
                     >
                         ✕
                     </button>
@@ -42,8 +46,8 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
                         <p className="product-modal__description">
                             {product.category === 'wired'
-                                ? 'Проводные наушники. Отличный выбор для повседневного использования.'
-                                : 'Беспроводные наушники с длительным временем работы.'}
+                                ? m.descriptionWired
+                                : m.descriptionWireless}
                         </p>
 
                         <div className="product-modal__footer">
@@ -66,7 +70,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                                     onClose();
                                 }}
                             >
-                                Купить
+                                {p.buy}
                             </button>
                         </div>
                     </div>

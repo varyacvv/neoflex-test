@@ -7,6 +7,7 @@ export interface CartContextValue {
   increment: (id: number) => void;
   decrement: (id: number) => void;
   removeFromCart: (id: number) => void;
+  clearCart: () => void;
   totalCount: number;
   totalPrice: number;
 }

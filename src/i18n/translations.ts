@@ -33,6 +33,22 @@ export interface TranslationSchema {
     descriptionWired: string;
     descriptionWireless: string;
   };
+  checkout: {
+    title: string;
+    name: string;
+    phone: string;
+    email: string;
+    address: string;
+    payment: string;
+    card: string;
+    cash: string;
+    submit: string;
+    success: string;
+    required: string;
+    invalidEmail: string;
+    invalidPhone: string;
+    backHome: string;
+  };
   lang: {
     ru: string;
     en: string;
@@ -75,6 +91,22 @@ export const translations: Record<Lang, TranslationSchema> = {
       descriptionWireless:
         "Беспроводные наушники с длительным временем работы.",
     },
+    checkout: {
+      title: "Оформление заказа",
+      name: "Имя и фамилия",
+      phone: "Телефон",
+      email: "Email",
+      address: "Адрес доставки",
+      payment: "Способ оплаты",
+      card: "Картой онлайн",
+      cash: "Наличными при получении",
+      submit: "Оплатить",
+      success: "Заказ успешно оформлен!",
+      required: "Заполните это поле",
+      invalidEmail: "Некорректный email",
+      invalidPhone: "Некорректный телефон",
+      backHome: "Вернуться на главную",
+    },
     lang: {
       ru: "Рус",
       en: "Eng",
@@ -112,6 +144,22 @@ export const translations: Record<Lang, TranslationSchema> = {
       close: "Close",
       descriptionWired: "Wired earphones. A great choice for everyday use.",
       descriptionWireless: "Wireless earphones with long battery life.",
+    },
+    checkout: {
+      title: "Checkout",
+      name: "Full name",
+      phone: "Phone",
+      email: "Email",
+      address: "Delivery address",
+      payment: "Payment method",
+      card: "Card online",
+      cash: "Cash on delivery",
+      submit: "Pay",
+      success: "Order placed successfully!",
+      required: "This field is required",
+      invalidEmail: "Invalid email",
+      invalidPhone: "Invalid phone",
+      backHome: "Back to home",
     },
     lang: {
       ru: "Рус",

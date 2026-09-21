@@ -20,7 +20,9 @@
 }
 
 .cart-summary__btn {
+  display: block;
   width: 100%;
+  text-align: center;
   background: #101010;
   color: #ffffff;
   border: none;
@@ -32,6 +34,7 @@
     background 0.2s ease,
     transform 0.15s ease,
     box-shadow 0.2s ease;
+  text-decoration: none;
 }
 .cart-summary__btn:hover {
   background: #ffa542;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from '../../i18n/useTranslation';
 import { formatPrice } from '../../utils/format';
 import './CartSummary.css';
@@ -17,9 +18,9 @@ export default function CartSummary({ total }: CartSummaryProps) {
                 <span>{formatPrice(total)}</span>
             </div>
 
-            <button type="button" className="cart-summary__btn">
+            <Link to="/checkout" className="cart-summary__btn">
                 {c.checkout}
-            </button>
+            </Link>
         </aside>
     );
 }

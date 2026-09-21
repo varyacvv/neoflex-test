@@ -57,6 +57,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     const totalCount = items.reduce((sum, i) => sum + i.quantity, 0);
     const totalPrice = items.reduce((sum, i) => sum + i.quantity * i.product.price, 0);
+    const clearCart = () => {
+        setItems([]);
+    };
 
     return (
         <CartContext.Provider
@@ -66,6 +69,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 increment,
                 decrement,
                 removeFromCart,
+                clearCart,
                 totalCount,
                 totalPrice,
             }}
